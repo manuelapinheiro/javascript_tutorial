@@ -1,0 +1,79 @@
+<body></body>
+
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library/build/nn.min.js"></script>
+
+<script>
+  
+  // global = nn
+  
+  function randomBG2 () {
+    const styles = {
+      color: 'red',
+      backgroundColor: 'pink',
+      fontSize: '100px',
+      fontFamily: 'fantasy'
+    }
+    
+    
+    nn.get('body')
+      .content('Hello')
+      .css(styles)
+  }
+  
+  function randomBG3 () {
+    nn.get('body').css({ backgroundColor: nn.randomColor()})
+  }
+  
+  nn.on('load', randomBG3)
+  
+  function setup () {
+    nn.get('body').css({ backgroundColor: nn.randomColor()})
+  }
+  
+  
+  function browserGreeting () {
+    const bi = nn.browserInfo()
+    let msg
+    
+    if (bi.name === 'Firefox') {
+    msg = 'Oh, I love ' + bi.name
+  } else if (bi.name === 'Chrome') {
+    msg = 'Oh no, ${bi.name} spies on you'
+  } else {
+    msg = 'Oh, ${bi.name}, interesting choice'
+  }
+    nn.get('body').content(msg)
+    
+  }
+  
+  
+  
+  
+  document.body.textContent = "Hello"
+  document.body.style.fontFamily = 'fantasy'
+
+  const name = "nick"
+  let homeTown = "Miami"
+    
+  function square (n) {
+    const s = n * n
+    return s
+    
+  }
+  
+  const x = square(5)
+  // alert(x)
+
+  function randomBG () {
+    
+    const r = Math.random() * 255
+    const g = Math.random() * 255
+    const b = Math.random() * 255
+    
+    document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b}`
+  }
+  
+  browserGreeting()
+  
+  
+</script>
