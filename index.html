@@ -72,7 +72,7 @@
   
   function makeCD () {
     nn.create('img')
-      .set('src', 'https://d2ph5fj80uercy.cloudfront.net/04/cat2972.jpg')
+      .set('src', 'https://cdn-icons-png.flaticon.com/512/10405/10405459.png')
       .addTo('body')
       .css({
         position: 'absolute',
@@ -82,7 +82,7 @@
   }  
   
   function setup () {
-    nn.get('body').css({ backgroundColor: nn.randomColor()})
+    nn.get('body').css({ backgroundColor: nn.randomColor() })
   }
   
   nn.on('load', setup)
